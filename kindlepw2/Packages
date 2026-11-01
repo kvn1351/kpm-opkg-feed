@@ -1,0 +1,84 @@
+Package: kinamp
+Version: 3.0.0
+Architecture: kindlepw2
+Maintainer: Barna
+Section: homebrew
+Priority: optional
+Installed-Size: 4170096
+Filename: kinamp_3.0.0_kindlepw2.ipk
+Size: 4158797
+SHA256sum: 2699b8e9f5f7fe833aa0c78a6cfba2ad9eff7fbf51e7a2901430d9125e50f2ff
+Description: KinAMP - Music and Internet Radio Player for Jailbroken Kindles, with a Native Player and a KOReader Plugin.
+
+Package: larkplayer
+Version: 2.9.0
+Architecture: kindlepw2
+Maintainer: Barna
+Section: homebrew
+Priority: optional
+Installed-Size: 2622978
+Filename: larkplayer_2.9.0_kindlepw2.ipk
+Size: 2603520
+SHA256sum: 99e9d93d2e946b3916b3c4a52ecdc39b24cd114b93827ca8a0528596e42ed5a1
+Description: LARK - LARK - Libre Audiobook Reader: an M4B/MP3 Audiobook Player for Jailbroken Kindles, with Chapters, Bookmarks and Listening History.
+
+Package: ranki
+Version: 0.2.0
+Architecture: kindlepw2
+Maintainer: CrazyElectron
+Section: homebrew
+Priority: optional
+Installed-Size: 11227323
+Filename: ranki_0.2.0_kindlepw2.ipk
+Size: 11174374
+SHA256sum: 8cb36794034f02ebde4cf5ab97fc1f85243fa99b889ec09acea82fc0ce2fdb42
+Description: RAnki - Anki Reviewer for Kindle
+
+Package: koreader
+Version: 2026.7.2
+Architecture: kindlepw2
+Maintainer: KOReader Team
+Section: homebrew
+Priority: optional
+Installed-Size: 41340083
+Filename: koreader_2026.7.2_kindlepw2.ipk
+Size: 41216516
+SHA256sum: 0be08c44ff84667876106fa488c1a4eb7099b5118efa1304df201ca8b483ac96
+Description: KOReader - An ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats, running on Cervantes, Kindle, Kobo, PocketBook and Android devices
+
+Package: kpm
+Version: 0.2.4
+Architecture: kindlepw2
+Maintainer: Hackerdude
+Section: homebrew
+Priority: optional
+Installed-Size: 7214491
+Filename: kpm_0.2.4_kindlepw2.ipk
+Size: 7174000
+SHA256sum: b899e92cff78ad26c4c5954dfa46414718c105f97103fee0ec90f55c38e41c89
+Description: KPM - The Kindle Package Manager allows you to install and uninstall apps and programs easily on your Kindle
+
+Package: kompanion
+Version: 0.2.0
+Architecture: kindlepw2
+Maintainer: Marek
+Section: homebrew
+Priority: optional
+Installed-Size: 2761443
+Filename: kompanion_0.2.0_kindlepw2.ipk
+Size: 2754899
+SHA256sum: c5ab942dc434e9dcafaa9bdee22310c799fb1986a8083ddc7264b476e4ecbcc6
+Description: KOmpanion - This package allows the kindle UI to index epub files and open them in KOReader
+
+Package: kterm
+Version: 2.6.0
+Architecture: kindlepw2
+Maintainer: B. Fabiszewski
+Section: homebrew
+Priority: optional
+Installed-Size: 392908
+Filename: kterm_2.6.0_kindlepw2.ipk
+Size: 387910
+SHA256sum: 50186ec426134e16f919e08be1c7ec5c1e5007b4e0fdbfce90b2e2d805e4c40c
+Description: kTerm - GTK+ Terminal Emulator for Kindle
+

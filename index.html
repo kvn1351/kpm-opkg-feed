@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kindle KPM to OPKG Feed</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #222; }
+        h1 { border-bottom: 2px solid #eaeaea; padding-bottom: 10px; }
+        pre { background: #f6f8fa; padding: 12px; border-radius: 6px; overflow-x: auto; }
+        code { font-family: ui-monospace, SFMono-Regular, monospace; background: #f0f2f5; padding: 2px 4px; border-radius: 4px; }
+        pre code { background: none; padding: 0; }
+        .card { background: #fff; border: 1px solid #e1e4e8; border-radius: 6px; padding: 16px; margin: 20px 0; }
+        details { margin-top: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Kindle KPM Homebrew Feed for OPKG</h1>
+    <p>Automated bridge compiling Kindle Package Manager (KPM) packages from <strong>KindleTweaks</strong> and <strong>KindleModding (KMC)</strong> into standard OPKG <code>.ipk</code> packages.</p>
+
+    <h3>Quick Setup</h3>
+    <p>Add the appropriate line to your <code>/mnt/us/.eink-sdk/opkg/opkg.conf</code>, then update and install:</p>
+    <pre><code>opkg update
+opkg install jobman
+opkg install koreader</code></pre>
+
+    
+        <div class="card">
+            <h2>Architecture: <code>kindlehf</code> (10 packages)</h2>
+            <p>Feed URL: <code>kindlehf/Packages.gz</code></p>
+            <p><strong>Config snippet for <code>/mnt/us/.eink-sdk/opkg/opkg.conf</code>:</strong></p>
+            <pre><code>src/gz kpm https://kvn1351.github.io/kpm-opkg-feed/kindlehf</code></pre>
+            <details>
+                <summary>View 10 Available Packages</summary>
+                <ul><li><code>gargoyle_1.0.0</code></li><li><code>jobman_1.2.1</code></li><li><code>kinamp_3.0.0</code></li><li><code>kompanion_0.2.0</code></li><li><code>koreader_2026.7.2</code></li><li><code>kpm_0.2.4</code></li><li><code>kterm_2.6.0</code></li><li><code>kuala_1.1.0</code></li><li><code>larkplayer_2.9.0</code></li><li><code>ranki_0.2.0</code></li></ul>
+            </details>
+        </div>
+        
+        <div class="card">
+            <h2>Architecture: <code>kindlepw2</code> (7 packages)</h2>
+            <p>Feed URL: <code>kindlepw2/Packages.gz</code></p>
+            <p><strong>Config snippet for <code>/mnt/us/.eink-sdk/opkg/opkg.conf</code>:</strong></p>
+            <pre><code>src/gz kpm https://kvn1351.github.io/kpm-opkg-feed/kindlepw2</code></pre>
+            <details>
+                <summary>View 7 Available Packages</summary>
+                <ul><li><code>kinamp_3.0.0</code></li><li><code>kompanion_0.2.0</code></li><li><code>koreader_2026.7.2</code></li><li><code>kpm_0.2.4</code></li><li><code>kterm_2.6.0</code></li><li><code>larkplayer_2.9.0</code></li><li><code>ranki_0.2.0</code></li></ul>
+            </details>
+        </div>
+        
+
+    <p style="color: #666; font-size: 0.9em; margin-top: 40px;">Updated automatically via GitHub Actions.</p>
+</body>
+</html>
