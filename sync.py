@@ -175,7 +175,7 @@ exit 0
     return len(data_bytes)
 
 
-def sync_repository(repo_source, out_dir, cache_dir):
+def sync_repository(repo_source, out_dir, cache_dir, latest_only=True):
     print(f"\n[*] Processing source: {repo_source}")
 
     if os.path.isdir(repo_source):
@@ -214,6 +214,15 @@ def sync_repository(repo_source, out_dir, cache_dir):
         description = pkg_info.get("description", pkg_name)
 
         artifacts = pkg_info.get("artifacts", [])
+        if latest_only:
+            best_by_platform = {}
+            for art in artifacts:
+                v = art.get("version", [1, 0, 0])
+                for p in art.get("supported_platforms", ["kindlehf"]):
+                    if p not in best_by_platform or v > best_by_platform[p].get("version", [0, 0, 0]):
+                        best_by_platform[p] = art
+            artifacts = list({art.get("url"): art for art in best_by_platform.values()}.values())
+
         for art in artifacts:
             rel_url = art.get("url")
             v = art.get("version", [1, 0, 0])
@@ -341,7 +350,9 @@ def main():
     )
     parser.add_argument("--out", "-o", default="./opkg-feed", help="Output feed directory")
     parser.add_argument("--cache", "-c", default="./.kpm-cache", help="Artifact cache directory")
+    parser.add_argument("--all-versions", action="store_true", help="Include all legacy versions instead of only latest")
     args = parser.parse_args()
+    latest_only = not args.all_versions
 
     out_dir = os.path.abspath(args.out)
     cache_dir = os.path.abspath(args.cache)
@@ -350,7 +361,7 @@ def main():
 
     for src in args.sources:
         try:
-            stanzas = sync_repository(src, out_dir, cache_dir)
+            stanzas = sync_repository(src, out_dir, cache_dir, latest_only=latest_only)
             for plat, pkgs in stanzas.items():
                 if plat not in all_stanzas:
                     all_stanzas[plat] = {}
