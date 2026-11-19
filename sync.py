@@ -15,6 +15,7 @@ import sys
 import tarfile
 import urllib.parse
 import urllib.request
+from native import add_releases, existing_stanzas
 
 KPM_COMPAT_VERSION = (0, 2, 4)
 USER_AGENT = "kpm-feed-sync/1.0"
@@ -237,8 +238,7 @@ def sync_repository(repo_source, out_dir, cache_dir, latest_only=True):
                 try:
                     kpkg_path = download_kpkg(base_url, rel_url, cache_dir)
                 except Exception as e:
-                    print(f"      [!] Failed to download {rel_url}: {e}", file=sys.stderr)
-                    continue
+                    raise RuntimeError(f"Failed to download {rel_url}") from e
 
             for platform in platforms:
                 try:
@@ -280,7 +280,7 @@ def sync_repository(repo_source, out_dir, cache_dir, latest_only=True):
                         feed_stanzas[platform] = {}
                     feed_stanzas[platform][f"{pkg_id}_{version_str}"] = stanza
                 except Exception as ex:
-                    print(f"      [!] Error converting {pkg_id} for {platform}: {ex}", file=sys.stderr)
+                    raise RuntimeError(f"Error converting {pkg_id} for {platform}") from ex
 
     return feed_stanzas
 
@@ -345,19 +345,25 @@ def main():
     parser = argparse.ArgumentParser(description="Fetch and convert KPM repositories into OPKG feeds")
     parser.add_argument(
         "sources",
-        nargs="+",
+        nargs="*",
         help="Local directories, GitHub slugs (e.g. KindleTweaks/Repo), or remote manifest URLs",
     )
     parser.add_argument("--out", "-o", default="./opkg-feed", help="Output feed directory")
     parser.add_argument("--cache", "-c", default="./.kpm-cache", help="Artifact cache directory")
     parser.add_argument("--all-versions", action="store_true", help="Include all legacy versions instead of only latest")
+    parser.add_argument("--native-manifest", help="Native GitHub release packages to preserve in every rebuild")
+    parser.add_argument("--native-only", action="store_true", help="Refresh native releases without rebuilding upstream packages")
     args = parser.parse_args()
+    if args.native_only and (args.sources or not args.native_manifest):
+        parser.error("--native-only requires --native-manifest and no upstream sources")
+    if not args.native_only and not args.sources:
+        parser.error("supply upstream sources, or use --native-only")
     latest_only = not args.all_versions
 
     out_dir = os.path.abspath(args.out)
     cache_dir = os.path.abspath(args.cache)
 
-    all_stanzas = {}
+    all_stanzas = existing_stanzas(out_dir) if args.native_only else {}
 
     for src in args.sources:
         try:
@@ -367,7 +373,11 @@ def main():
                     all_stanzas[plat] = {}
                 all_stanzas[plat].update(pkgs)
         except Exception as e:
-            print(f"[!] Error syncing {src}: {e}", file=sys.stderr)
+            raise RuntimeError(f"Error syncing {src}; existing feed indexes were not replaced") from e
+
+    if args.native_manifest:
+        # Fail closed: a broken native release must not silently disappear.
+        add_releases(args.native_manifest, out_dir, all_stanzas)
 
     print("\n[+] Writing feed indexes...")
     for platform, pkg_dict in all_stanzas.items():
@@ -380,8 +390,8 @@ def main():
         body = "\n".join(pkg_dict.values()) + "\n"
         with open(packages_txt, "w", encoding="utf-8") as f:
             f.write(body)
-        with gzip.open(packages_gz, "wb") as f:
-            f.write(body.encode("utf-8"))
+        with open(packages_gz, "wb") as f:
+            f.write(gzip.compress(body.encode("utf-8"), mtime=0))
 
         print(f"  --> {platform}: {len(pkg_dict)} packages indexed in Packages and Packages.gz")
 

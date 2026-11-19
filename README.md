@@ -66,13 +66,23 @@ opkg remove <package_name>
 - **KindleTweaks/Repo**: `kuala`, `gargoyle`, `kinamp`, `larkplayer`, `ranki`
 - **KindleModding/repo (KMC)**: `jobman`, `koreader`, `kpm`, `kompanion`, `kterm`
 
+Native release imports are supported through `native-packages.json`, currently
+empty. Only add packages once checksum-verified assets are publicly available;
+private or unpublished releases cannot be imported by the public feed.
+
 ---
 
 ## How It Works
 
-1. A GitHub Actions workflow runs daily at 04:00 UTC (and can be triggered manually).
-2. It fetches upstream manifests (`manifest.v2.json` / `manifest.json`) from both repositories.
-3. It resolves and downloads `.kpkg` packages (including transparent resolution of Git LFS objects).
-4. It converts `.kpkg` archives into standard Debian-format `.ipk` packages, wiring existing `install.sh` / `uninstall.sh` lifecycle hooks into `postinst` and `prerm`.
-5. It computes SHA-256 digests and compiles RFC 822 `Packages` and `Packages.gz` feeds.
-6. Feeds are deployed automatically to GitHub Pages.
+1. The workflow on `main` rebuilds both upstream KPM feeds daily at 04:00 UTC,
+   on pushes to `main`, and when `Publish OPKG feed` is triggered manually.
+2. It fetches manifests and converts the newest `.kpkg` for each platform to
+   `.ipk`, preserving the upstream install/uninstall hooks.
+3. Any source, download, conversion or native-release error fails the build;
+   incomplete feed indexes are not published.
+4. Native releases configured in `native-packages.json` are checked against their
+   published `SHA256SUMS` before inclusion.
+5. The workflow saves generated files to `gh-pages`, then explicitly uploads and
+   deploys a GitHub Pages artifact. Pages must use the **GitHub Actions** build
+   source; a branch push using `GITHUB_TOKEN` alone does not trigger a Pages build.
+   No cross-repository PAT is needed.
