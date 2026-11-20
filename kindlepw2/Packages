@@ -7,7 +7,7 @@ Priority: optional
 Installed-Size: 4170096
 Filename: kinamp_3.0.0_kindlepw2.ipk
 Size: 4158797
-SHA256sum: 3846c2f2bbfd4ac86ac9cfdfb9d90f014dec9df6359619ce902bbdbf50fcb9f1
+SHA256sum: 8b53edad1cbf639224881b1eaecc9d55d0fd60c4f70ded7131ec2f2bcaeb2b9d
 Description: KinAMP - Music and Internet Radio Player for Jailbroken Kindles, with a Native Player and a KOReader Plugin.
 
 Package: larkplayer
@@ -19,7 +19,7 @@ Priority: optional
 Installed-Size: 2622978
 Filename: larkplayer_2.9.0_kindlepw2.ipk
 Size: 2603520
-SHA256sum: 0447d6a494d522acfdb8ea5123da31643fb82dd9a757fdc0d04ecf409e0c336a
+SHA256sum: 519401ac0077198a9ba987d99e7fdd8ecc372f19ccf5c58b7ae2c56b01b4ddac
 Description: LARK - LARK - Libre Audiobook Reader: an M4B/MP3 Audiobook Player for Jailbroken Kindles, with Chapters, Bookmarks and Listening History.
 
 Package: ranki
@@ -31,7 +31,7 @@ Priority: optional
 Installed-Size: 11227323
 Filename: ranki_0.2.0_kindlepw2.ipk
 Size: 11174374
-SHA256sum: 0e2a629f4f8646e62270d2249406b718b46f9bb2fb7d1b60f608207f41d928fe
+SHA256sum: 9656b720ba73d0a6f22264582d95eb3aaffb0cb5ea28f79b7c9720802e683cf8
 Description: RAnki - Anki Reviewer for Kindle
 
 Package: koreader
@@ -43,7 +43,7 @@ Priority: optional
 Installed-Size: 41340083
 Filename: koreader_2026.7.2_kindlepw2.ipk
 Size: 41216516
-SHA256sum: 1ce60a6c4fd36b001ce2c027708809ba77c27369cee99a94144a4bf351efb640
+SHA256sum: ce2c31e3e944b9ddbe3d58684161633f42774a48e1875979a274219a46c11d51
 Description: KOReader - An ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats, running on Cervantes, Kindle, Kobo, PocketBook and Android devices
 
 Package: kpm
@@ -55,7 +55,7 @@ Priority: optional
 Installed-Size: 7214491
 Filename: kpm_0.2.4_kindlepw2.ipk
 Size: 7174000
-SHA256sum: fc624374d2a2b9b8a21250faa5a37ceb678881b89be89f921dc5eaca6b00c27c
+SHA256sum: 366265af0af77bddc69495af74888ed718f1dd7924eaf3678b220ccb9aa782f3
 Description: KPM - The Kindle Package Manager allows you to install and uninstall apps and programs easily on your Kindle
 
 Package: kompanion
@@ -66,8 +66,8 @@ Section: homebrew
 Priority: optional
 Installed-Size: 2761443
 Filename: kompanion_0.2.0_kindlepw2.ipk
-Size: 2754899
-SHA256sum: b9f661ec2e349a465aca9c7598f8d28d13f9d0ddc5298572e17e313c0d8cee60
+Size: 2754904
+SHA256sum: 990a57541d9c99a390a9b25986450a8e07091601f50e7431a415c230f53f5ce0
 Description: KOmpanion - This package allows the kindle UI to index epub files and open them in KOReader
 
 Package: kterm
@@ -78,7 +78,7 @@ Section: homebrew
 Priority: optional
 Installed-Size: 392908
 Filename: kterm_2.6.0_kindlepw2.ipk
-Size: 387910
-SHA256sum: 213da38064d6fb8e991fc2e27a767a80a99c795e688ba347844b48c045865f09
+Size: 387911
+SHA256sum: 90881429172cf4ff5a4dedf45f61d95e76887ef163fa071b1b61ae0771d14e99
 Description: kTerm - GTK+ Terminal Emulator for Kindle
 

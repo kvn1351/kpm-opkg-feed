@@ -7,7 +7,7 @@ Priority: optional
 Installed-Size: 548437
 Filename: kuala_1.1.0_kindlehf.ipk
 Size: 548566
-SHA256sum: 09ad0f146c5184fab0b611779c4fba3708c9aee831286d9950505caaeb526d32
+SHA256sum: 506713a5aef55f5df3bb29276fc83c1e36ef6a91416581f8608c7c3651839ac6
 Description: KUALA - Homebrew Launcher for Kindle, based on the legacy KUAL.
 
 Package: gargoyle
@@ -19,7 +19,7 @@ Priority: optional
 Installed-Size: 6044913
 Filename: gargoyle_1.0.0_kindlehf.ipk
 Size: 6035516
-SHA256sum: 42b007424814ff8f6008f676f774cab4d16c25675e6134f888b2a3d5c17b08f1
+SHA256sum: 5ffb15a50351a3953103ec46ff9f06c0398d898a093920e1f9906a066be9f75a
 Description: Gargoyle - IF Reader Compiled for Kindle.
 
 Package: kinamp
@@ -30,8 +30,8 @@ Section: homebrew
 Priority: optional
 Installed-Size: 4170096
 Filename: kinamp_3.0.0_kindlehf.ipk
-Size: 4158797
-SHA256sum: 9044c9e8b24ae9223ed191768bf9655ebd2c2a3fd93f37cc0578b6ad9478bb27
+Size: 4158798
+SHA256sum: c3d08b61bd749510fcbc73341fc29d86c8ff03b34bda10c8246b98194d2d65b3
 Description: KinAMP - Music and Internet Radio Player for Jailbroken Kindles, with a Native Player and a KOReader Plugin.
 
 Package: larkplayer
@@ -43,7 +43,7 @@ Priority: optional
 Installed-Size: 2622978
 Filename: larkplayer_2.9.0_kindlehf.ipk
 Size: 2603523
-SHA256sum: d1ee8830827fc550872326a06212abb185760829a3a1c26a4c9a2b0d869b4094
+SHA256sum: de5f2cc4019bb5fbc3f5c8c8d0f0ef84dcaf71192d4e9ab4184cb6ae488f12e2
 Description: LARK - LARK - Libre Audiobook Reader: an M4B/MP3 Audiobook Player for Jailbroken Kindles, with Chapters, Bookmarks and Listening History.
 
 Package: ranki
@@ -55,7 +55,7 @@ Priority: optional
 Installed-Size: 10935045
 Filename: ranki_0.2.0_kindlehf.ipk
 Size: 10884592
-SHA256sum: 025fa5775c0a44a64f5d6c41dc18caa5cdf4bc53398d56ebeeed9032b6fcd0c7
+SHA256sum: 4353d2814d4cc30f7c554ae96cbb703fa594954e7e6e2c845bd2a7e1083efbbd
 Description: RAnki - Anki Reviewer for Kindle
 
 Package: koreader
@@ -67,7 +67,7 @@ Priority: optional
 Installed-Size: 41336804
 Filename: koreader_2026.7.2_kindlehf.ipk
 Size: 41213571
-SHA256sum: 138844b4b152f7d0191c611fe7efeb634e034ec3913079b886b4e331507e9a2a
+SHA256sum: 20800335e9dd8df7ea4ddb67457028ea8121d9f028779af212a535c60d9de077
 Description: KOReader - An ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats, running on Cervantes, Kindle, Kobo, PocketBook and Android devices
 
 Package: kpm
@@ -79,7 +79,7 @@ Priority: optional
 Installed-Size: 7214491
 Filename: kpm_0.2.4_kindlehf.ipk
 Size: 7173999
-SHA256sum: b49cadfbc9662addf3815bff7e950583ce6c8f8dce587d3df82530c01ecb6d9b
+SHA256sum: 519a1fb6297e05a46df0c90adedee5f5fd5833e19bb5f81b6086e9f859d2859f
 Description: KPM - The Kindle Package Manager allows you to install and uninstall apps and programs easily on your Kindle
 
 Package: kompanion
@@ -90,8 +90,8 @@ Section: homebrew
 Priority: optional
 Installed-Size: 2761443
 Filename: kompanion_0.2.0_kindlehf.ipk
-Size: 2754899
-SHA256sum: f90b7436f4a322264c20b11d4475170a335e9d8c1707b1075775ecaa071ce903
+Size: 2754900
+SHA256sum: 364b704159bd1d896b0f82efc5db52f55b9462eb9a2caadc2c924f100327c100
 Description: KOmpanion - This package allows the kindle UI to index epub files and open them in KOReader
 
 Package: kterm
@@ -102,8 +102,8 @@ Section: homebrew
 Priority: optional
 Installed-Size: 387869
 Filename: kterm_2.6.0_kindlehf.ipk
-Size: 383815
-SHA256sum: a13fa6b559ee687e1cb64dfc21dda3aeeea46f73fa96d6318c645a437ad60cf1
+Size: 383818
+SHA256sum: 751827eb0d4e87410fe3a1fb68c8620d404f78f5ce91ea19cf99bf397812ced3
 Description: kTerm - GTK+ Terminal Emulator for Kindle
 
 Package: jobman
@@ -115,6 +115,6 @@ Priority: optional
 Installed-Size: 6849625
 Filename: jobman_1.3.0_kindlehf.ipk
 Size: 6836164
-SHA256sum: 9e13da4496f312625bbd9217e6c14780d49927e375028c48bd591aba440f948f
+SHA256sum: 936f8a0642efc6bcae0f30b3264ef5e6e466e6b97990533faff0c999ba21b412
 Description: Jobman - Kindle jailbreak manager
 
